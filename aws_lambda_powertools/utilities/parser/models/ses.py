@@ -23,6 +23,8 @@ class SesReceipt(BaseModel):
     virusVerdict: SesReceiptVerdict
     spfVerdict: SesReceiptVerdict
     dmarcVerdict: SesReceiptVerdict
+    dkimVerdict: SesReceiptVerdict | None = None
+    dmarcPolicy: Literal["none", "quarantine", "reject"] | None = None
     action: SesReceiptAction
 
 
